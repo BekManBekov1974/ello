@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme) =>
   createStyles({
     wrapper: {
       minWidth: 250,
-      padding: "50px 25px 20px",
+      padding: "50px 15px 20px",
       background: colors.lightSilver,
       fontSize: 18,
       color: colors.textColor,
@@ -15,7 +15,7 @@ export const useStyles = makeStyles((theme) =>
     menuItem: {
       display: "flex",
       alignItems: "center",
-      padding: "8px 20px",
+      padding: "8px 15px",
       cursor: "pointer",
       borderRadius: 7,
     },

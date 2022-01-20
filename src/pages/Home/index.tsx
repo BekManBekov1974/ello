@@ -11,7 +11,13 @@ import { connect, ConnectedProps } from "react-redux";
 import { IAppreducers } from "../../store/rootReducer";
 import { actions as taskActions } from "../../store/reducers/taskReducer";
 import { Splash } from "../../components/SplashScreen";
-export const Home: FC<TPropsFromRedux> = ({ taskState, tasks, fetchTasks }) => {
+export const Home: FC<TPropsFromRedux> = ({
+  taskState,
+  tasks,
+  fetchTasks,
+  user,
+  loginState,
+}) => {
   const [showNewTaskDialog, setShowNewTaskDialog] = useState<boolean>(false);
   const styles = useStyles();
   useEffect(() => {
@@ -20,6 +26,7 @@ export const Home: FC<TPropsFromRedux> = ({ taskState, tasks, fetchTasks }) => {
   useEffect(() => {
     console.log(tasks["Completed"]);
   }, [tasks]);
+  if (!loginState.success && !user) return null;
   return (
     <div className={styles.wrapper}>
       <NewTaskDialog
@@ -28,7 +35,7 @@ export const Home: FC<TPropsFromRedux> = ({ taskState, tasks, fetchTasks }) => {
       />
       <Sidebar />
       <div className={styles.rightSection}>
-        <Header title="Daily task" />
+        <Header title={user.userName || ""} />
         <div className={styles.canbanWrapper}>
           <div className={styles.canbansContainer}>
             <Canban
@@ -62,6 +69,8 @@ const connector = connect(
   (state: IAppreducers) => ({
     taskState: state.tasks.tasksState,
     tasks: state.tasks.tasks,
+    user: state.auth.user,
+    loginState: state.auth.loginState,
   }),
   {
     fetchTasks: taskActions.fetchTasks,
