@@ -10,33 +10,41 @@ export const Header: React.FC<IHeaderProps> = ({ title }) => {
     <div className={styles.wrapper}>
       <div className={styles.leftSection}>
         <Iconly
-          name="Google"
-          color={colors.darkGreen}
-          style={{ marginRight: 10 }}
+          name="Menu2"
+          color={colors.lightYellow}
+          wrap
+          bgColor={colors.blueDark}
         />
-        <h1>{title}</h1>
       </div>
       <div className={styles.rightSection}>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <Iconly
-            name="Search"
-            color={colors.textColor}
-            wrap
-            bgColor={colors.background}
-          />
-          <Iconly
-            name="Notification"
-            color={colors.textColor}
-            wrap
-            bgColor={colors.background}
-            style={{ marginLeft: 15 }}
-          />
-        </div>
-        <img
-          src="https://lh3.googleusercontent.com/a-/AOh14Gg-LW709j1soLMCvnx-TNrKIabj0C160KEwX6RAdQ=s96-c"
-          className={styles.avatar}
+        <Iconly
+          style={{ marginRight: 15 }}
+          name="Chat"
+          color={colors.lightSky}
+          wrap
+          bgColor={colors.blueDark}
+          wrapStyle="circle"
         />
-        <Iconly name="Menu" color={colors.darkSilver} />
+        <Iconly
+          name="Notification"
+          color={colors.yellow}
+          wrap
+          bgColor={colors.blueDark}
+          wrapStyle="circle"
+        />
+        <img
+          width={40}
+          className={styles.avatar}
+          src="https://lh3.googleusercontent.com/a-/AOh14Gg-LW709j1soLMCvnx-TNrKIabj0C160KEwX6RAdQ=s96-c"
+        />
+        <div>
+          <span style={{ fontSize: 16, color: "white" }}>
+            Quvondiqov Allayor
+          </span>
+          <div style={{ color: colors.lightSky, marginTop: 5, fontSize: 14 }}>
+            htecgf@gmail.com
+          </div>
+        </div>
       </div>
     </div>
   );

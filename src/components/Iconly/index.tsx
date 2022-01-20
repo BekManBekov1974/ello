@@ -8,6 +8,9 @@ interface IIconProps {
   style?: React.CSSProperties;
   bgColor?: string;
   size?: "sm" | "md" | "lg";
+  wrapSize?: number;
+  textIcon?: string;
+  wrapStyle?: "circle" | "rounded" | "square";
 }
 export const Iconly: React.FC<IIconProps> = ({
   name,
@@ -16,6 +19,9 @@ export const Iconly: React.FC<IIconProps> = ({
   style,
   bgColor,
   size = "lg",
+  wrapSize = 40,
+  textIcon = "",
+  wrapStyle = "rounded",
 }) => {
   const styles = makeStyles((theme) =>
     createStyles({
@@ -23,10 +29,11 @@ export const Iconly: React.FC<IIconProps> = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: 8,
         background: bgColor,
-        borderRadius: "50%",
-        width: "fit-content",
+        borderRadius:
+          wrapStyle == "circle" ? "50%" : wrapStyle == "rounded" ? 11 : 0,
+        width: wrapSize,
+        height: wrapSize,
       },
     })
   )();
@@ -38,7 +45,7 @@ export const Iconly: React.FC<IIconProps> = ({
   return (
     <div
       className={wrap ? styles.iconWrapper : ""}
-      style={{ lineHeight: 0, ...style }}
+      style={{ lineHeight: 0, ...style, cursor: "pointer" }}
     >
       <svg
         width={sizes[size]}

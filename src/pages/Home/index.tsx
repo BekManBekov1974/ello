@@ -33,7 +33,6 @@ export const Home: FC<TPropsFromRedux> = ({
         show={showNewTaskDialog}
         onClose={() => setShowNewTaskDialog(false)}
       />
-      <Sidebar />
       <div className={styles.rightSection}>
         <Header title={user.userName || ""} />
         <div className={styles.canbanWrapper}>
