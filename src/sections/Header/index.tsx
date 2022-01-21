@@ -3,8 +3,9 @@ import { colors } from "../../constants/colors";
 import { useStyles } from "./hooks/useStyles";
 interface IHeaderProps {
   title: string;
+  logout: () => {} | void;
 }
-export const Header: React.FC<IHeaderProps> = ({ title }) => {
+export const Header: React.FC<IHeaderProps> = ({ title, logout }) => {
   const styles = useStyles();
   return (
     <div className={styles.wrapper}>
@@ -18,8 +19,9 @@ export const Header: React.FC<IHeaderProps> = ({ title }) => {
       </div>
       <div className={styles.rightSection}>
         <Iconly
+          onClick={logout}
           style={{ marginRight: 15 }}
-          name="Down"
+          name="Logout"
           size="md"
           color={colors.lightSky}
           wrap

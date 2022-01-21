@@ -9,6 +9,8 @@ enum ActionTypes {
   USER_LOGIN_SUCCESS = "user/loginSuccess",
   USER_LOGIN_ERROR = "user/loginError",
 
+  USER_LOGOUT = "user/logout",
+
   USER_LOGIN_WITH_GOOGLE = "user/loginWithGoogle",
   USER_LOGIN_WITH_GOOGLE_SUCCESS = "user/loginWithGoogleSuccess",
   USER_LOGIN_WITH_GOOGLE_ERROR = "user/loginWithGoogleError",
@@ -77,6 +79,13 @@ export const authReducer = (
   action: IAction
 ): typeof initialState => {
   switch (action.type) {
+    case ActionTypes.USER_LOGOUT: {
+      return {
+        ...state,
+        user: {},
+        loginState: initLoadingState,
+      };
+    }
     case ActionTypes.USER_LOGIN: {
       return {
         ...state,
@@ -91,7 +100,7 @@ export const authReducer = (
     case ActionTypes.USER_LOGIN_SUCCESS: {
       return {
         ...state,
-        user: action.payload,
+        user: action.payload as IUser,
         loginState: {
           loading: false,
           success: true,
@@ -183,8 +192,8 @@ export const authReducer = (
   }
 };
 export type TCustomActions = typeof actions;
-
 export const actions = {
+  userLogout: () => createAction(ActionTypes.USER_LOGOUT),
   userLogin: (payload: IRequestLogin) =>
     createAction(ActionTypes.USER_LOGIN, payload),
   userLoginSuccess: (payload: IUser) =>

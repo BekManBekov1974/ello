@@ -6,17 +6,20 @@ import { NewTaskDialog } from "../../sections/Dialogs/TaskDialog";
 import { RichEdit } from "../../components/RichEdit";
 import { ITask, TaskPriority, TaskState, TaskType } from "../../interfaces";
 import { Dropdown } from "../../components/Dropdown";
-import { FC, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { IAppreducers } from "../../store/rootReducer";
 import { actions as taskActions } from "../../store/reducers/taskReducer";
+import { actions as authActions } from "../../store/reducers/authReducer";
 import { Splash } from "../../components/SplashScreen";
+import { useHistory } from "react-router-dom";
 export const Home: FC<TPropsFromRedux> = ({
   taskState,
   tasks,
   fetchTasks,
   user,
   loginState,
+  logout,
 }) => {
   const [showNewTaskDialog, setShowNewTaskDialog] = useState<boolean>(false);
   const styles = useStyles();
@@ -109,6 +112,12 @@ export const Home: FC<TPropsFromRedux> = ({
       type: TaskType.Task,
     },
   };
+  const history = useHistory();
+  const logoutUser = useCallback(() => {
+    console.log("Bu yerga keldi:");
+    logout();
+    history.push("/login");
+  }, []);
   if (!loginState.success && !user) return null;
   return (
     <div className={styles.wrapper}>
@@ -117,7 +126,7 @@ export const Home: FC<TPropsFromRedux> = ({
         onClose={() => setShowNewTaskDialog(false)}
       />
       <div className={styles.rightSection}>
-        <Header title={user.userName || ""} />
+        <Header title={user.userName || ""} logout={() => logoutUser()} />
         <div className={styles.canbanWrapper}>
           <div className={styles.canbansContainer}>
             <Canban
@@ -156,6 +165,7 @@ const connector = connect(
   }),
   {
     fetchTasks: taskActions.fetchTasks,
+    logout: authActions.userLogout,
   }
 );
 

@@ -10,6 +10,7 @@ interface IIconProps {
   size?: "sm" | "md" | "lg";
   wrapSize?: number;
   textIcon?: string;
+  onClick?: () => {} | void;
   wrapStyle?: "circle" | "rounded" | "square";
 }
 export const Iconly: React.FC<IIconProps> = ({
@@ -22,6 +23,7 @@ export const Iconly: React.FC<IIconProps> = ({
   wrapSize = 40,
   textIcon = "",
   wrapStyle = "rounded",
+  onClick,
 }) => {
   const styles = makeStyles((theme) =>
     createStyles({
@@ -46,6 +48,7 @@ export const Iconly: React.FC<IIconProps> = ({
     <div
       className={wrap ? styles.iconWrapper : ""}
       style={{ lineHeight: 0, ...style, cursor: "pointer" }}
+      onClick={onClick}
     >
       <svg
         width={sizes[size]}
