@@ -19,7 +19,8 @@ export const Header: React.FC<IHeaderProps> = ({ title }) => {
       <div className={styles.rightSection}>
         <Iconly
           style={{ marginRight: 15 }}
-          name="Chat"
+          name="Down"
+          size="md"
           color={colors.lightSky}
           wrap
           bgColor={colors.blueDark}
@@ -41,7 +42,7 @@ export const Header: React.FC<IHeaderProps> = ({ title }) => {
           <span style={{ fontSize: 16, color: "white" }}>
             Quvondiqov Allayor
           </span>
-          <div style={{ color: colors.lightSky, marginTop: 5, fontSize: 14 }}>
+          <div style={{ color: colors.lightSky, fontSize: 14 }}>
             htecgf@gmail.com
           </div>
         </div>

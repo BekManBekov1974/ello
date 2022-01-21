@@ -7,16 +7,25 @@ export const useStyles = makeStyles(() =>
       borderRadius: 5,
     },
     wrapper: {
-      borderRadius: 5,
       background: "white",
       padding: "14px 16px",
-      margin: "12px 0",
-      boxShadow: `0px 0px 0px 1px ${colors.darkGreen}`,
+      margin: "0px 0 12px",
+      boxSizing: "border-box",
+      minWidth: 350,
+      maxWidth: 350,
     },
     header: {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
+    },
+    taskTitle: {
+      fontWeight: "bold",
+      textTransform: "uppercase",
+      flex: "1 1 0",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
     },
     reaction: {
       width: 24,

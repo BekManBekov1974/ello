@@ -6,19 +6,24 @@ export const useStyles = makeStyles((theme) =>
     wrapper: {
       display: "flex",
       flexDirection: "column",
+
       width: 350,
-      marginRight: 30,
+      marginRight: 15,
       padding: 2,
     },
     titleBar: {
+      marginTop: 25,
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      background: "#F3F4F5",
-      padding: "13px 16px",
-      fontSize: 18,
+      borderRadius: `8px 8px 0 0`,
+      color: colors.lightSky,
+      background: colors.blue,
+      padding: `0 15px`,
+      height: 45,
+      fontSize: 16,
       fontWeight: 600,
-      borderBottom: "3px solid " + colors.darkGreen,
+      marginBottom: 4,
     },
     counter: {
       borderRadius: 4,
@@ -35,7 +40,7 @@ export const useStyles = makeStyles((theme) =>
       overflowY: "scroll",
       flex: "1 0 auto",
       height: 0,
-      padding: 5,
+      width: 360,
       boxSizing: "border-box",
       "& >div": {
         marginTop: 0,

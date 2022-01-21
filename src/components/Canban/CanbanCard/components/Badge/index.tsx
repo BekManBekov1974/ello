@@ -10,28 +10,43 @@ interface IBadgeProps {
 }
 export const Badge: React.FC<IBadgeProps> = ({ text, icon, priority }) => {
   const color = {
-    [TaskPriority.Default]: "#2FA276",
-    [TaskPriority.Minor]: "#2E4ACD7D",
-    [TaskPriority.Critic]: "#B900D7",
-    [TaskPriority.Serious]: "#FFC107",
-    [TaskPriority.Emergency]: "#FC3637",
+    [TaskPriority.Default]: {
+      background: colors.defaultLight,
+      color: colors.defaultText,
+    },
+    [TaskPriority.Minor]: {
+      background: colors.minorLight,
+      color: colors.minorText,
+    },
+    [TaskPriority.Critic]: {
+      background: colors.criticHover,
+      color: colors.criticText,
+    },
+    [TaskPriority.Serious]: {
+      background: colors.seriousLight,
+      color: colors.seriousText,
+    },
+    [TaskPriority.Emergency]: {
+      background: colors.emergencyLight,
+      color: colors.emergencyText,
+    },
   };
   return (
     <div
       style={{
+        ...color[priority],
         display: "flex",
         alignItems: "center",
         paddingLeft: 4,
         paddingRight: 7,
-        borderRadius: 4,
-        backgroundColor: color[priority],
-        color: "white",
+        borderRadius: 2,
       }}
     >
       <Iconly
-        style={{ transform: "scale(0.7)" }}
         name={icon}
-        color="white"
+        size="sm"
+        style={{ marginRight: 5 }}
+        color={color[priority].color}
       ></Iconly>
       <span>{text}</span>
     </div>

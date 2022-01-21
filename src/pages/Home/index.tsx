@@ -26,6 +26,89 @@ export const Home: FC<TPropsFromRedux> = ({
   useEffect(() => {
     console.log(tasks["Completed"]);
   }, [tasks]);
+
+  const tasklar: { [key: string]: ITask } = {
+    a: {
+      deadline: "Mart 26",
+      assigne: {
+        avatar: "",
+        username: "Amir",
+        email: "Amir@gmail.com",
+      },
+      title:
+        "[Metaco] - Create draft design for User Journey earning coin on Apps",
+      content:
+        "У нас лишний раз вызывается попап локейшн в каталоге. Надо его вызывать только, когда нет адреса в каталоге",
+      grade: "2H",
+      priority: TaskPriority.Emergency,
+      state: TaskState.Do,
+      type: TaskType.Task,
+    },
+    b: {
+      deadline: "Aprel 5",
+      assigne: {
+        avatar: "",
+        username: "Amir",
+        email: "Amir@gmail.com",
+      },
+      title:
+        "[Metaco] - Create draft design for User Journey earning coin on Apps",
+      content:
+        "У нас лишний раз вызывается попап локейшн в каталоге. Надо его вызывать только, когда нет адреса в каталоге",
+      grade: "2H",
+      priority: TaskPriority.Default,
+      state: TaskState.Do,
+      type: TaskType.Task,
+    },
+    r: {
+      deadline: "Aprel 5",
+      assigne: {
+        avatar: "",
+        username: "Amir",
+        email: "Amir@gmail.com",
+      },
+      title:
+        "[Metaco] - Create draft design for User Journey earning coin on Apps",
+      content:
+        "У нас лишний раз вызывается попап локейшн в каталоге. Надо его вызывать только, когда нет адреса в каталоге",
+      grade: "2H",
+      priority: TaskPriority.Critic,
+      state: TaskState.Do,
+      type: TaskType.Task,
+    },
+    x: {
+      deadline: "Aprel 5",
+      assigne: {
+        avatar: "",
+        username: "Amir",
+        email: "Amir@gmail.com",
+      },
+      title:
+        "[Metaco] - Create draft design for User Journey earning coin on Apps",
+      content:
+        "У нас лишний раз вызывается попап локейшн в каталоге. Надо его вызывать только, когда нет адреса в каталоге",
+      grade: "2H",
+      priority: TaskPriority.Emergency,
+      state: TaskState.Do,
+      type: TaskType.Task,
+    },
+    q: {
+      deadline: "Aprel 5",
+      assigne: {
+        avatar: "",
+        username: "Amir",
+        email: "Amir@gmail.com",
+      },
+      title:
+        "[Metaco] - Create draft design for User Journey earning coin on Apps",
+      content:
+        "У нас лишний раз вызывается попап локейшн в каталоге. Надо его вызывать только, когда нет адреса в каталоге",
+      grade: "2H",
+      priority: TaskPriority.Serious,
+      state: TaskState.Do,
+      type: TaskType.Task,
+    },
+  };
   if (!loginState.success && !user) return null;
   return (
     <div className={styles.wrapper}>
@@ -39,7 +122,7 @@ export const Home: FC<TPropsFromRedux> = ({
           <div className={styles.canbansContainer}>
             <Canban
               title="Plan"
-              tasks={tasks["Plan"] && {}}
+              tasks={tasklar}
               onNewClick={() => setShowNewTaskDialog(true)}
             />
             <Canban

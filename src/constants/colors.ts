@@ -13,7 +13,7 @@ export const colors = {
 
   lightYellow: "#FFC107",
   yellow: "#F4DB71",
-  lightSky: "#72A5CF",
+  lightSky: "#B8D6F4",
   dark: "#2E2E2E",
   lightDark: "#707070",
   silver: "@818181",
@@ -22,16 +22,21 @@ export const colors = {
 
   minor: "#A7A7A7",
   minorLight: "#DFDFDF",
+  minorText: "#4F4F4F",
 
   default: "#1AAA55",
   defaultLight: "#B3E6C8",
+  defaultText: "#0A4020",
 
   serious: "#FC9403",
   seriousLight: "#FED69F",
+  seriousText: "#853C00",
 
   critic: "#DB3B21",
   criticHover: "#F2B4A9",
+  criticText: "#711E11",
 
   emergency: "#805DE7",
   emergencyLight: "#B29DF1",
+  emergencyText: "#380D75",
 };

@@ -14,12 +14,13 @@ export const useStyles = makeStyles((theme) =>
       flexDirection: "column",
     },
     canbanWrapper: {
-      marginLeft: 25,
-      paddingBottom: 20,
+      boxSizing: "border-box",
+      border: "1px solid red",
+      width: "100%",
+      paddingBottom: 10,
       display: "flex",
-      flex: "1",
-      overflow: "hidden",
-      overflowX: "auto",
+      justifyContent: "center",
+      flex: "1 0 auto",
     },
     canbansContainer: {
       display: "flex",
