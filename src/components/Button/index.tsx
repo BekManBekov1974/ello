@@ -38,9 +38,8 @@ export const Button: React.FC<IButtonProps> = ({
       button: {
         backgroundColor:
           outline || borderless ? "transparent" : colors.darkGreen,
-        color: outline || borderless ? colors.darkGreen : "white",
+        color: outline || borderless ? colors.darkGreen : colors.lightSky,
         width: full ? "auto" : "fit-content",
-
         boxShadow: outline ? "0 0 0 1px " + colors.darkGreen : "none",
         "&:hover": {
           backgroundColor:

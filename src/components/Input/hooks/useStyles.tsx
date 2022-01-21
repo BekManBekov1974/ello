@@ -4,7 +4,7 @@ import { colors } from "../../../constants/colors";
 export const useStyles = makeStyles((theme) =>
   createStyles({
     wrapper: {
-      borderRadius: 10,
+      borderRadius: 6,
       minHeight: 50,
       fontFamily: "Roboto",
       display: "flex",
@@ -13,8 +13,9 @@ export const useStyles = makeStyles((theme) =>
       fontSize: 18,
       cursor: "pointer",
       userSelect: "none",
-      background: colors.lightSilver,
+      background: colors.lightSky + "3F",
       position: "relative",
+      transition: "0.2s linear",
     },
     input: {
       boxSizing: "border-box",
@@ -23,8 +24,9 @@ export const useStyles = makeStyles((theme) =>
       fontSize: 18,
       background: "none",
       outline: "none",
+      color: colors.blueDark,
       "&::placeholder": {
-        color: "#999999",
+        color: colors.lightSky,
       },
     },
     leftIcon: {

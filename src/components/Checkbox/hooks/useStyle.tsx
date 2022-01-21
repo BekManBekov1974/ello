@@ -19,7 +19,7 @@ export const useStyles = makeStyles((theme) =>
       verticalAlign: "middle",
       borderRadius: 7,
       transition: "0.2s ease",
-      "& + svg": {
+      "& + div": {
         position: "absolute",
         left: 4,
         transition: "0.1s ease-in",
@@ -28,9 +28,11 @@ export const useStyles = makeStyles((theme) =>
         pointerEvents: "none",
       },
       "&:checked": {
-        boxShadow: "inset 0 0 0 18px " + colors.darkGreen,
-        "&:checked + svg": {
-          stroke: "white",
+        boxShadow:
+          "inset 0 0 0 18px " +
+          colors.darkGreen +
+          `,0 0 0 4px ${colors.lightSky}AF`,
+        "&:checked + div": {
           transform: "scale(1)",
         },
       },

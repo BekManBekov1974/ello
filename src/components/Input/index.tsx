@@ -29,7 +29,7 @@ export const Input: React.FC<
 }) => {
   const [visiblePassword, setVisiblePassword] = useState(true);
   const styles = useStyles();
-
+  const [focus, setFocus] = useState<boolean>(false);
   return (
     <div style={{ ...style, position: "relative" }}>
       <div className={styles.label}>
@@ -38,7 +38,11 @@ export const Input: React.FC<
       <div
         className={styles.wrapper}
         style={{
-          boxShadow: error ? `0 0 0 1px ${colors.crimsonRed}` : "none",
+          boxShadow: error
+            ? `0 0 0 1px ${colors.crimsonRed}`
+            : focus
+            ? `0 0 0 1px ${colors.blueDark}`
+            : "none",
           padding: multiline ? 24 : "",
         }}
       >
@@ -49,6 +53,8 @@ export const Input: React.FC<
         )}
         {!multiline ? (
           <input
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(() => false)}
             {...props}
             type={
               type == "password" ? (visiblePassword ? type : "text") : "text"

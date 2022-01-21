@@ -18,7 +18,7 @@ export const useStyles = makeStyles((theme) =>
       borderRadius: 12,
     },
     section: {
-      marginTop: 40,
+      marginTop: 30,
     },
   })
 );

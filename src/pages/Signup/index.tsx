@@ -74,7 +74,7 @@ const Signup: React.FC<TPropsFromRedux> = ({ signupState, userSignup }) => {
         </section>
 
         <section className={styles.section}>
-          <Button full text="Login" onClick={signUp} />
+          <Button full text="Sign up" onClick={signUp} />
         </section>
         <section style={{ textAlign: "center" }} className={styles.section}>
           <div>Already have and account?</div>

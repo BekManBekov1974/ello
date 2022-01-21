@@ -21,8 +21,8 @@ const Login: React.FC<TPropsFromRedux> = ({
 }) => {
   const styles = useStyles();
   const history = useHistory();
-  const [email, setEmail] = useState<string>("htecgf@gmail.com");
-  const [password, setPassword] = useState<string>("197414@ello");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const loginIntoSystem = useCallback(() => {
     login({ email: email, password: password });
   }, [email, password]);
@@ -76,11 +76,11 @@ const Login: React.FC<TPropsFromRedux> = ({
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           label="Password"
-          style={{ marginTop: 30 }}
+          style={{ marginTop: 50 }}
           type="password"
           placeholder="Enter your password..."
         />
-        <Checkbox label="Remember me" />
+        <Checkbox style={{ marginTop: 20 }} label="Remember me" />
         <section className={styles.section}>
           <Button
             full

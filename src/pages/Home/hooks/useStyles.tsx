@@ -15,7 +15,6 @@ export const useStyles = makeStyles((theme) =>
     },
     canbanWrapper: {
       boxSizing: "border-box",
-      border: "1px solid red",
       width: "100%",
       paddingBottom: 10,
       display: "flex",

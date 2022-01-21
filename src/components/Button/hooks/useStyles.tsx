@@ -3,7 +3,7 @@ import { createStyles, makeStyles } from "@mui/styles";
 export const useStyles = makeStyles((theme) =>
   createStyles({
     wrapper: {
-      borderRadius: 10,
+      borderRadius: 6,
       height: 50,
       fontFamily: "Roboto",
       display: "flex",
