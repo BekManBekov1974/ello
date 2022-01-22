@@ -56,7 +56,7 @@ export const Canban: React.FC<ICanbanProps> = ({
       <div className={styles.cardsWrapper}>
         {taskCollection &&
           Object.keys(taskCollection).map((task) => {
-            return <CanbanCard task={taskCollection[task]} />;
+            return <CanbanCard task={taskCollection[task]} key={task} />;
           })}
       </div>
     </div>

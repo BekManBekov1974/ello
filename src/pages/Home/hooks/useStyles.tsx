@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme) =>
     canbanWrapper: {
       boxSizing: "border-box",
       width: "100%",
-      paddingBottom: 10,
+      padding: 16,
       display: "flex",
       justifyContent: "center",
       flex: "1 0 auto",

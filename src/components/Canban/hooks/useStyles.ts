@@ -12,7 +12,6 @@ export const useStyles = makeStyles((theme) =>
       padding: 2,
     },
     titleBar: {
-      marginTop: 25,
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
