@@ -114,7 +114,6 @@ export const Home: FC<TPropsFromRedux> = ({
   };
   const history = useHistory();
   const logoutUser = useCallback(() => {
-    console.log("Bu yerga keldi:");
     logout();
     history.push("/login");
   }, []);
@@ -126,27 +125,27 @@ export const Home: FC<TPropsFromRedux> = ({
         onClose={() => setShowNewTaskDialog(false)}
       />
       <div className={styles.rightSection}>
-        <Header title={user.userName || ""} logout={() => logoutUser()} />
+        <Header user={user} logout={() => logoutUser()} />
         <div className={styles.canbanWrapper}>
           <div className={styles.canbansContainer}>
             <Canban
               title="Plan"
-              tasks={tasklar}
+              tasks={tasks["Plan"]}
               onNewClick={() => setShowNewTaskDialog(true)}
             />
             <Canban
               title="In progress"
-              tasks={tasks["In progress"] && {}}
+              tasks={tasks["In progress"]}
               onNewClick={() => setShowNewTaskDialog(true)}
             />
             <Canban
               title="To verify"
-              tasks={tasks["To verify"] && {}}
+              tasks={tasks["To verify"]}
               onNewClick={() => setShowNewTaskDialog(true)}
             />
             <Canban
               title="Completed"
-              tasks={tasks["Completed"] && {}}
+              tasks={tasks["Completed"]}
               onNewClick={() => setShowNewTaskDialog(true)}
             />
           </div>

@@ -19,8 +19,8 @@ export const Iconly: React.FC<IIconProps> = ({
   wrap = false,
   style,
   bgColor,
-  size = "lg",
-  wrapSize = 40,
+  size = "sm",
+  wrapSize = 32,
   textIcon = "",
   wrapStyle = "rounded",
   onClick,
@@ -42,7 +42,7 @@ export const Iconly: React.FC<IIconProps> = ({
   const sizes = {
     md: 20,
     lg: 24,
-    sm: 16,
+    sm: 18,
   };
   return (
     <div

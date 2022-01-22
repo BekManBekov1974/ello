@@ -23,6 +23,7 @@ export const useStyles = makeStyles((theme) =>
     },
     canbansContainer: {
       display: "flex",
+
       width: 0,
       flex: "1 0 auto",
     },

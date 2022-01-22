@@ -34,11 +34,11 @@ export enum TaskState {
   Completed = "completed",
 }
 export enum TaskPriority {
-  Default = "default",
-  Critic = "kiritik",
-  Serious = "serious",
-  Emergency = "emergency",
-  Minor = "minor",
+  Default = "Default",
+  Critic = "Critic",
+  Serious = "Serious",
+  Emergency = "Emergency",
+  Minor = "Minor",
 }
 export interface ITask {
   deadline: string;

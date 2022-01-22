@@ -1,11 +1,12 @@
 import { Iconly } from "../../components/Iconly";
 import { colors } from "../../constants/colors";
+import { IUser } from "../../store/reducers/authReducer";
 import { useStyles } from "./hooks/useStyles";
 interface IHeaderProps {
-  title: string;
+  user: Partial<IUser>;
   logout: () => {} | void;
 }
-export const Header: React.FC<IHeaderProps> = ({ title, logout }) => {
+export const Header: React.FC<IHeaderProps> = ({ user, logout }) => {
   const styles = useStyles();
   return (
     <div className={styles.wrapper}>
@@ -38,14 +39,12 @@ export const Header: React.FC<IHeaderProps> = ({ title, logout }) => {
         <img
           width={40}
           className={styles.avatar}
-          src="https://lh3.googleusercontent.com/a-/AOh14Gg-LW709j1soLMCvnx-TNrKIabj0C160KEwX6RAdQ=s96-c"
+          src={user.avatar || "/assets/images/avatarPlaceholder.png"}
         />
         <div>
-          <span style={{ fontSize: 16, color: "white" }}>
-            Quvondiqov Allayor
-          </span>
+          <span style={{ fontSize: 16, color: "white" }}>{user.userName}</span>
           <div style={{ color: colors.lightSky, fontSize: 14 }}>
-            htecgf@gmail.com
+            {user.email}
           </div>
         </div>
       </div>

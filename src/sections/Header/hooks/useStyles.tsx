@@ -4,9 +4,9 @@ import { colors } from "../../../constants/colors";
 export const useStyles = makeStyles((theme) =>
   createStyles({
     wrapper: {
-      padding: "0 25px",
+      padding: "0 16px",
       width: "auto",
-      height: 72,
+      height: 60,
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
@@ -15,14 +15,13 @@ export const useStyles = makeStyles((theme) =>
         alignItems: "center",
       },
       background: colors.blue,
-      borderRadius: "0 0 10px 10px",
       boxShadow: `0px 4px 4px rgba(4, 60, 105, 0.2)`,
     },
     leftSection: {},
     rightSection: {},
     avatar: {
-      width: 48,
-      height: 48,
+      width: 36,
+      height: 36,
       borderRadius: 30,
       margin: "0 15px",
       objectFit: "cover",

@@ -37,18 +37,12 @@ export const Badge: React.FC<IBadgeProps> = ({ text, icon, priority }) => {
         ...color[priority],
         display: "flex",
         alignItems: "center",
-        paddingLeft: 4,
-        paddingRight: 7,
+        padding: `2px 4px`,
         borderRadius: 2,
+        fontSize: 13,
       }}
     >
-      <Iconly
-        name={icon}
-        size="sm"
-        style={{ marginRight: 5 }}
-        color={color[priority].color}
-      ></Iconly>
-      <span>{text}</span>
+      <span>{text || "N/A"}</span>
     </div>
   );
 };
